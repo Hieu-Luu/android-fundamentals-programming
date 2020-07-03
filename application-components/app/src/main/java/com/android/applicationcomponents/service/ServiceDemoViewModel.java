@@ -13,10 +13,6 @@ public class ServiceDemoViewModel extends ViewModel {
     private Context context;
     public final ObservableField<String> status = new ObservableField<>();
 
-    public Context setContext() {
-        return context;
-    }
-
     public void setContext(Context context) {
         this.context = context;
     }
@@ -25,7 +21,6 @@ public class ServiceDemoViewModel extends ViewModel {
         Objects.requireNonNull(context).startService(new Intent(context, MyService.class));
     }
 
-    // Method to stop the service
     public void stopService() {
         Objects.requireNonNull(context).stopService(new Intent(context, MyService.class));
     }

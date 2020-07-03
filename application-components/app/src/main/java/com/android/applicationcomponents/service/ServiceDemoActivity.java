@@ -12,7 +12,6 @@ public class ServiceDemoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.service_activity);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
