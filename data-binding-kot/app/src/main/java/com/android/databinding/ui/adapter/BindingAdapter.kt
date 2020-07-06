@@ -1,4 +1,4 @@
-package com.android.databinding.util
+package com.android.databinding.ui.adapter
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -12,7 +12,6 @@ import androidx.core.widget.ImageViewCompat
 import androidx.databinding.BindingAdapter
 import com.android.databinding.R
 import com.android.databinding.data.Popularity
-import kotlinx.android.synthetic.main.activity_main.view.*
 
 /**
  * A Binding Adapter the is called whenever the valuw of the attribute 'app:popularityIcon' changes
@@ -20,9 +19,17 @@ import kotlinx.android.synthetic.main.activity_main.view.*
  * */
 @BindingAdapter("app:popularityIcon")
 fun popularityIcon(view: ImageView, popularity: Popularity) {
-    val color = getAssociatedColor(popularity, view.context)
+    val color = getAssociatedColor(
+        popularity,
+        view.context
+    )
     ImageViewCompat.setImageTintList(view, ColorStateList.valueOf(color))
-    view.setImageDrawable(getDrawablePopularity(popularity, view.context))
+    view.setImageDrawable(
+        getDrawablePopularity(
+            popularity,
+            view.context
+        )
+    )
 }
 
 /**
@@ -31,9 +38,12 @@ fun popularityIcon(view: ImageView, popularity: Popularity) {
  * */
 @BindingAdapter("app:progressTint")
 fun tintPopularity(view: ProgressBar, popularity: Popularity) {
-    val color = getAssociatedColor(popularity, view.context)
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        view.progressTintList = ColorStateList.valueOf(color)
+        val color = getAssociatedColor(
+            popularity,
+            view.context
+        )
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            view.progressTintList = ColorStateList.valueOf(color)
     }
 }
 
