@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.backgroundtask">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <service
+            android:name=".notifications.TwoWayMessagingService"
+            android:enabled="false"
+            android:exported="false"></service>
+        <service
+            android:name=".services.MessengerService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name=".services.StartedService"
+            android:exported="false" />
+        <service
+            android:name=".services.ForegroundService"
+            android:exported="false" />
+        <service
+            android:name=".services.BoundServiceIBinder"
+            android:exported="false" />
+        <service
+            android:name=".services.StartedIntentService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".broadcasts.CustomReceiver"
+            android:exported="false" />
+
+        <activity android:name=".main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
