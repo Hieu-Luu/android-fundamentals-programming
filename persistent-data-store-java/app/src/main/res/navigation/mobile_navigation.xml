@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.android.persistentdata.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            app:destination="@id/nav_home_second" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home_second"
+        android:name="com.android.persistentdata.ui.home.HomeSecondFragment"
+        android:label="@string/home_second"
+        tools:layout="@layout/fragment_home_second">
+        <action
+            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
+            app:destination="@id/nav_home" />
+
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_auto_backup"
+        android:name="com.android.persistentdata.ui.autobackup.AutoBackupFragment"
+        android:label="@string/menu_auto_backup"
+        tools:layout="@layout/fragment_auto_backup" />
+
+    <fragment
+        android:id="@+id/nav_files"
+        android:name="com.android.persistentdata.ui.files.FilesFragment"
+        android:label="@string/menu_file"
+        tools:layout="@layout/fragment_files" />
+
+    <fragment
+        android:id="@+id/nav_shared_references"
+        android:name="com.android.persistentdata.ui.sharedpreferences.SharedPreferencesFragment"
+        android:label="@string/menu_shared_references"
+        tools:layout="@layout/fragment_shared_preferences" />
+
+    <fragment
+        android:id="@+id/nav_word_room"
+        android:name="com.android.persistentdata.ui.room.WordRoomFragment"
+        android:label="@string/menu_word_room"
+        tools:layout="@layout/fragment_word_room" />
+
+    <fragment
+        android:id="@+id/nav_custom_data_store"
+        android:name="com.android.persistentdata.ui.customdatastore.CustomDataStoreFragment"
+        android:label="@string/menu_word_room"
+        tools:layout="@layout/fragment_custom_data_store" />
+
+    <fragment
+        android:id="@+id/nav_app_settings"
+        android:name="com.android.persistentdata.ui.appsettings.AppSettingsFragment"
+        android:label="@string/menu_word_room"
+        tools:layout="@layout/fragment_app_settings" />
+</navigation>
